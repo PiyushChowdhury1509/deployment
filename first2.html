@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-500 " >
+    <section class="bg-blue-600 text-white py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Drive Safely, Arrive Safely</h2>
+            <p class="text-lg mb-8">Your safety is our priority. Follow these tips to stay safe on the road.</p>
+            <a href="#" class="bg-white text-blue-600 py-2 px-6 rounded-full font-bold hover:bg-blue-950 hover:text-white transition duration-300" id="next-page-link">EVERY GREAT JOURNEY STARTS WITH A SINGLE STEP. Let's get started</a>
+        </div>
+    </section>
+     <div class="flex"> 
+    <img src="download.jpg" class="rounded-sm h-64 bg-opacity-25"> 
+     <p class="text-5xl text-red-100 font-extrabold mx-32 my-28">24/7 SAFE-ZONE</p>  
+    </div>
+ <script>
+     const nextPageLink = document.getElementById("next-page-link");
+     nextPageLink.addEventListener("click", function(event){
+        event.preventDefault();
+        window.location.href = "landingpage.html";
+     });
+ </script>
+     
+</body>
+</html>

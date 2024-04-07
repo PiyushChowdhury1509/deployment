@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-100">
+    <nav class="bg-purple-950 text-white flex justify-between">
+        <span class="text-left text-xl flex items-center mx-16 font-serif text-yellow-200 font-semibold">SafeZone</span> 
+        <ul class="px-96 py-2 flex space-x-8  justify-end">
+            <li class="cursor-pointer hover:bg-slate-50 hover:text-neutral-950" id="FAQ-tab">FAQ</li> 
+            <li class="cursor-pointer hover:bg-slate-50 hover:text-neutral-950" id="About-tab">About</li>
+            <li class="cursor-pointer hover:bg-slate-50 hover:text-neutral-950" id="Documentation-tab">Documentation</li> 
+        </ul>
+    </nav>
+    
+    <p class="text-center my-11 text-5xl text-blue-950 font-extrabold">Welcome! to 24x7 SafeZone</p>
+    <div id="root"></div>
+
+    <div class="flex"> 
+        <img src="safety.jpg" class="h-40 w-56 rounded-full space-x-2">
+        <img src="purple.jpg" class="h-40 w-52 rounded-full space-x-1">
+        <img src="safety3.png" class="h-40 w-52 rounded-full space-x-1">
+        <img src="safety4.jpg" class="h-40 w-52 rounded-full space-x-1">
+        <img src="safety5.jpg" class="h-40 w-52 rounded-full space-x-1">
+    </div>
+
+    <main> 
+        <div class="main bg-purple-100 h-96 py-55">
+            <div class="font-extrabold text-3xl pl-9 text-purple-950 ">“It’s a great honor,“Maybe I couldn’t help everyone survive, but I could, at least, save this one life.” YOUR ONE TAP CAN SAVE SOMEONE'S LIFE </div>
+            <p class="py-3 ">Life is totally unpredictable. Anything can happen at anytime. So make yourself to be ready for others. Someone is waiting for you to come back home with safety. "I've learned that courage and compassion are two sides of the same coin, and that every warrior, every humanitarian, every citizen is built to live with both. In fact, to win a war, to create peace, to save a life, or just to live a good life requires of us - of every one of us - that we be both good and strong." ~ Eric Greitens</p> 
+        </div>
+    </main>
+
+    <!-- Add the upload form -->
+    <form id="uploadForm" enctype="multipart/form-data" action="/upload" method="POST">
+        <input type="file" id="fileInput" name="file"> <!-- Change name to "file" -->
+        <button id="uploadBtn" class="bg-purple-600 rounded-lg h-20 w-52 justify-end text-black font-bold my-5 px-5 py-3 hover:bg-purple-900 hover:text-slate-50 hover:rounded-xl">Upload a Photo</button>
+    </form>
+    
+    
+  
+    <footer>
+        &copy; 2024 All rights reserved, Designed by Kirti.
+    </footer>
+
+    <!-- Add JavaScript code -->
+    <script> 
+        const faqTab = document.getElementById("FAQ-tab");
+        const documentationTab = document.getElementById("Documentation-tab");
+        const aboutTab = document.getElementById("About-tab");
+        const feedbackTab = document.getElementById("Feedback-tab");
+        const uploadBtn = document.getElementById("uploadBtn");
+        const fileInput = document.getElementById("fileInput");
+
+        // Add event listeners for navigation tabs
+        faqTab.addEventListener("click", function() {
+    window.location.href = "../../bennet_kir/faq.html";
+});
+
+aboutTab.addEventListener("click", function() {
+    window.location.href = "../../bennet_kir/about_us.html";
+});
+ 
+        documentationTab.addEventListener("click", function() {
+            window.location.href = "../../bennet_kir/documentation.html ";
+        });
+
+        // Add event listener for the upload button
+        uploadBtn.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Create a FormData object to store the file
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            // Send the file to the server for processing
+            fetch("server.js", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("error uploading file");
+                    // Handle success (e.g., show a success message)
+                } else {
+                    alert("file submitted successively");
+                    // Handle error (e.g., show an error message)
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+    </script>
+</body>
+</html>

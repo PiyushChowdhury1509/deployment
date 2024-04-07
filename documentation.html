@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation on Accidents</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            background-image: url('bgm_img_doc.jpg'); /* Replace 'background.jpg' with your background image URL */
+            background-size: cover;
+            background-position: center;
+        } 
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Custom background color with transparency */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333; /* Heading color */
+            font-family: 'Times New Roman', Times, serif;
+        
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: medium;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            display: flex;
+            align-items: center;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .accident-icon {
+            width: 30px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .side-image {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            background-image: url('side-image.jpg'); /* Replace 'side-image.jpg' with your side image URL */
+            background-size: cover;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var titleElement = document.getElementById('title');
+            var colors = ['#007bff', '#28a745', '#dc3545', '#ffc107', '#17a2b8']; // Add more colors if needed
+            
+            // Function to change title color every second
+            setInterval(function() {
+                var randomColor = colors[Math.floor(Math.random() * colors.length)];
+                titleElement.style.color = randomColor;
+            }, 1000); // Change color every 1000 milliseconds (1 second)
+        };
+    </script>
+   
+</head>
+<body>
+    <nav class="bg-purple-950  text-white flex justify-between">
+        <span class="text-left text-xl flex items-center mx-16 font-serif text-yellow-200 font-semibold">SafeZone</span> 
+        <ul class=" px-7 py-2 flex space-x-8  justify-end">
+        <li class="cursor-pointer font-semibold hover:bg-slate-50 hover:text-black" id="Home-tab">Home</li>
+    </nav>
+
+    <div class="side-image"></div>
+    <div class="container">
+        <h1 id="title" class=" font-extrabold text-3xl">Documentation on Accidents</h1>
+                          <br>
+        <ul class="px-14">
+            <li>
+                <a href="https://pib.gov.in/PressReleasePage.aspx?PRID=1973295">
+                    <img src="PIB.png" alt="Accident Icon" class="accident-icon">
+                    Annual Report on Road Accidents in India-2022
+                </a>
+            </li>
+            <li>
+                <a href="https://morth.nic.in/sites/default/files/RA_2021_Compressed.pdf" target="_blank"> <!-- Open PDF in a new tab -->
+                    <img src="MORTH.jpg" alt="Accident Icon" class="accident-icon">
+                    Road accidents in India 2021
+                </a>
+            </li>
+            <li>
+                <a href="https://www.sanrachna.foundation/road-rage-in-india/">
+                    <img src="sanrachna.jpg" alt="Logo" class="logo" width="30" height="30"> <!-- Adjust width and height as needed -->
+                    Road rage in India
+                </a>
+            </li>
+            <li>
+                <a href="https://traffic.delhipolice.gov.in/sites/default/files/uploads/2022/Delhi-Crash-Report-2022.pdf" target="_blank">
+                    <img src="delhi_police.jpg" alt="logo" class="Logo" width="30" height="30">
+                    Delhi-Crash-Report-2022
+                </a>
+            </li>
+            <li>
+                <a href="https://jlrjs.com/wp-content/uploads/2023/01/3.-Dr.-Deepa-Kulsherastha-Pratigya-Vyas-Animesh-Verma-1.pdf" target="_blank">
+                    <img src="stra.jpg" alt="logo" class="logo" width="30" height="30">
+                    STRAY ANIMALS ON THE ROAD: A HAVOC: LEGAL ASPECTS
+                </a>
+            </li>
+            <!-- Add more accidents as needed -->
+        </ul>
+    </div>
+    <script>
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollLinks = document.querySelectorAll('a[href^="#"]');
+            
+            for (const scrollLink of scrollLinks) {
+                scrollLink.addEventListener('click', smoothScroll);
+            }
+            
+            function smoothScroll(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    </script>
+   
+    
+    
+    <footer>
+        <ul>
+            <li class="copyright">
+                © <script>document.write(new Date().getFullYear())</script> All Rights Reserved,Designed by Vinayak 
+            </li>
+        </ul>
+    </footer>
+   
+    <script>
+        const homeTab = document.getElementById("Home-tab");
+        homeTab.addEventListener("click",function(){
+                window.location.href = "landingpage.html";
+            });
+    
+    </script>
+</body>
+
+</html>

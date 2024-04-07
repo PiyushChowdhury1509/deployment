@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('safety1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      text-align: center;
+    }
+    .a {
+         margin-right: 10px;
+    }
+
+    h1 {
+      color: black;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .homepage-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 20px; /* Added */
+    }
+
+    .homepage-btn:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      position: fixed; /* Changed */
+      bottom: 0; /* Added */
+      width: 100%; /* Added */
+      padding: 10px 0;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+      z-index: 0; /* Added */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Moved homepage button here -->
+    <h1>About Us</h1>
+    <p>Welcome to our About Us page! At [Company Name], we are passionate about leveraging technology for the betterment of society. Our dedicated team has developed an innovative accident detection and reporting web application that revolutionizes emergency response.
+
+      Imagine this: a passerby witnesses an accident. With a simple click, they capture the scene, and our app springs into action. The photo is swiftly uploaded to our server, where our advanced AI model distinguishes between real accidents and pranks. Once verified, the information is promptly dispatched to both hospital and police authorities, prioritizing response based on the severity of the incident.</p>
+    <p>At the heart of our mission is a commitment to saving lives and improving emergency services. With our cutting-edge technology, we strive to make communities safer and empower individuals to act swiftly in times of crisis. Join us in shaping a safer tomorrow.
+    </p>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="aboutus.js"></script>
+  </div>
+  <a href="login.html" class="homepage-btn">go to home</a>
+  <footer>
+     
+  </footer>
+</body>
+</html>
